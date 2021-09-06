@@ -255,6 +255,7 @@ public class newBookScreen extends javax.swing.JFrame {
     private void addBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButtonActionPerformed
         // TODO add your handling code here:
         dispose();
+        new myBooksScreen().setVisible(true);
     }//GEN-LAST:event_addBookButtonActionPerformed
 
     private void checkBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox5ActionPerformed

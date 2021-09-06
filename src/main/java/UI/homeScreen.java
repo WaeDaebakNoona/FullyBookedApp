@@ -121,7 +121,7 @@ public class homeScreen extends javax.swing.JFrame {
     private void myBooksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myBooksButtonActionPerformed
         // TODO add your handling code here:
          dispose();
-        new newBookScreen().setVisible(true);
+        new myBooksScreen().setVisible(true);
     }//GEN-LAST:event_myBooksButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
