@@ -32,6 +32,8 @@ public class myBooksScreen extends javax.swing.JFrame {
         homeButton = new javax.swing.JButton();
         newBookButton = new javax.swing.JButton();
         myBooksButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,8 +47,20 @@ public class myBooksScreen extends javax.swing.JFrame {
         });
 
         newBookButton.setText("NEW BOOK");
+        newBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newBookButtonActionPerformed(evt);
+            }
+        });
 
         myBooksButton.setText("MY BOOKS");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,20 +69,26 @@ public class myBooksScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(homeButton)
-                .addGap(52, 52, 52)
-                .addComponent(newBookButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(newBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(myBooksButton)
-                .addGap(34, 34, 34))
+                .addGap(45, 45, 45))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(homeButton)
                     .addComponent(newBookButton)
@@ -84,6 +104,12 @@ public class myBooksScreen extends javax.swing.JFrame {
         dispose();
         new homeScreen().setVisible(true);
     }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void newBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBookButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new newBookScreen().setVisible(true);
+    }//GEN-LAST:event_newBookButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +149,8 @@ public class myBooksScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton myBooksButton;
     private javax.swing.JButton newBookButton;
     // End of variables declaration//GEN-END:variables

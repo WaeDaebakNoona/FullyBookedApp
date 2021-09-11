@@ -58,10 +58,25 @@ public class editInput extends javax.swing.JFrame {
         });
 
         homeButton.setText("HOME");
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
 
         newBookButton.setText("NEW BOOK");
+        newBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newBookButtonActionPerformed(evt);
+            }
+        });
 
         myBooksButton.setText("MY BOOKS");
+        myBooksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myBooksButtonActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Title:");
 
@@ -70,6 +85,11 @@ public class editInput extends javax.swing.JFrame {
         jLabel4.setText("Author:");
 
         addTitleButton.setText("ADD");
+        addTitleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTitleButtonActionPerformed(evt);
+            }
+        });
 
         addAuthorButton.setText("ADD");
 
@@ -164,6 +184,30 @@ public class editInput extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new homeScreen().setVisible(true);
+    }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void newBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBookButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new newBookScreen().setVisible(true);
+    }//GEN-LAST:event_newBookButtonActionPerformed
+
+    private void myBooksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myBooksButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new myBooksScreen().setVisible(true);
+    }//GEN-LAST:event_myBooksButtonActionPerformed
+
+    private void addTitleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTitleButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        
+    }//GEN-LAST:event_addTitleButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -137,16 +137,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="HOME"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="newBookButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="NEW BOOK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newBookButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="myBooksButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="MY BOOKS"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myBooksButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -173,6 +182,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="ADD"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTitleButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="addAuthorButton">
       <Properties>
