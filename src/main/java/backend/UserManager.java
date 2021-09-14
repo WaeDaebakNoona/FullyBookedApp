@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class UserManager {
     public static String filepath = "data//users.txt";
     
+    //add a new user "register" 
     public static void addUser(String username, String password){
         try{
             PrintWriter pw = new PrintWriter(new FileWriter(filepath, true));
@@ -32,6 +33,8 @@ public class UserManager {
         
         }
     }
+    
+    //check users password and username
     public static boolean checkUser(String username, String password){
         try {
             Scanner sc = new Scanner(new File(filepath));

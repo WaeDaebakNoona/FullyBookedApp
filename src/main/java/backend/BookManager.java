@@ -34,6 +34,7 @@ public class BookManager {
         } 
   
     }
+    //get authorss
     public static String getAuthors(){
         try {
             Scanner sc = new Scanner(new File(filepath));
@@ -50,6 +51,7 @@ public class BookManager {
                 
                 //if(!title.equals(titleToDelete){   <--- delete book |  output += line + "\n"
                 output += author + "\n";
+                System.out.println(author);
             }
             sc.close();
             return output;
@@ -58,14 +60,19 @@ public class BookManager {
         }
         return null;   
     }
+    //get titless
     public static String getTitles(){
         try {
             Scanner sc = new Scanner(new File(filepath));
             String output = "";
             
             while(sc.hasNextLine()){
-                output += sc.hasNextLine() + "\n";
+                String line = sc.nextLine();
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
                 
+                String title = lineSc.next();
+                output += title + "\n";
+                System.out.println(title);
             }
             sc.close();
         } catch (FileNotFoundException ex) {
@@ -74,6 +81,8 @@ public class BookManager {
         return null;
     }
     
+    //delete book
+    //if(!title.equals(titleToDelete){
     public static void deleteBook(String titleToDelete){
        
 		try {
@@ -94,7 +103,7 @@ public class BookManager {
 		} catch (FileNotFoundException ex) {
 			System.out.println("Book not found");
 		} catch (IOException ex) {
-			System.out.println("Could not delete student");
+			System.out.println("Could not delete title");
 		}
 	}
     

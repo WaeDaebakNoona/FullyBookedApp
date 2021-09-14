@@ -39,7 +39,7 @@ public class newBookScreen extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        summaryInput = new javax.swing.JTextArea();
         checkBox1 = new javax.swing.JCheckBox();
         checkBox2 = new javax.swing.JCheckBox();
         checkBox4 = new javax.swing.JCheckBox();
@@ -97,9 +97,9 @@ public class newBookScreen extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        summaryInput.setColumns(20);
+        summaryInput.setRows(5);
+        jScrollPane1.setViewportView(summaryInput);
 
         checkBox1.setText("1");
 
@@ -334,9 +334,9 @@ public class newBookScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton myBookButton;
     private javax.swing.JButton newBookButton;
+    private javax.swing.JTextArea summaryInput;
     private javax.swing.JTextField titleInput;
     // End of variables declaration//GEN-END:variables
 
