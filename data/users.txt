@@ -3,3 +3,4 @@ man#123
 bonaquisha#12345
 bob#strange
 me#1234
+red#red

@@ -16,6 +16,8 @@ public class EditGenres extends javax.swing.JFrame {
      */
     public EditGenres() {
         initComponents();
+        
+        setLocationRelativeTo(null);
     }
 
     /**
