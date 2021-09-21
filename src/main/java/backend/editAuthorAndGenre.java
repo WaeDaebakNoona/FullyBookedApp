@@ -34,7 +34,7 @@ public class editAuthorAndGenre {
         return null;
 
     }
-    
+    //ahhhhhhhhhhhhhhhhhhhhh
     public static String getAuthor(String name, String surname){
     
         try {
