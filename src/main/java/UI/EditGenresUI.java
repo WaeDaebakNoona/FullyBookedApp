@@ -5,19 +5,23 @@
  */
 package UI;
 
+import backend.GenreManager;
+
 /**
  *
  * @author NaritaA
  */
-public class EditGenres extends javax.swing.JFrame {
+public class EditGenresUI extends javax.swing.JFrame {
 
     /**
      * Creates new form EditGenres
      */
-    public EditGenres() {
+    public EditGenresUI() {
         initComponents();
         
         setLocationRelativeTo(null);
+        String genres = GenreManager.getGenre();
+        currentGenreOutputDisplay.setText(genres);
     }
 
     /**
@@ -36,11 +40,13 @@ public class EditGenres extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
+        homeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("CURRRENT GENRES");
 
+        currentGenreOutputDisplay.setEditable(false);
         currentGenreOutputDisplay.setColumns(20);
         currentGenreOutputDisplay.setRows(5);
         jScrollPane1.setViewportView(currentGenreOutputDisplay);
@@ -61,6 +67,13 @@ public class EditGenres extends javax.swing.JFrame {
             }
         });
 
+        homeButton.setText("HOME");
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,16 +83,21 @@ public class EditGenres extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(genreInput)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18))
+                        .addContainerGap()
+                        .addComponent(genreInput)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(homeButton)
+                        .addGap(73, 73, 73))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
                         .addComponent(deleteButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addComponent(addButton)
@@ -97,14 +115,17 @@ public class EditGenres extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(58, 58, 58)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(genreInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(deleteButton)
-                            .addComponent(addButton))))
+                            .addComponent(addButton))
+                        .addGap(18, 18, 18)
+                        .addComponent(homeButton)
+                        .addGap(2, 2, 2)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -113,13 +134,31 @@ public class EditGenres extends javax.swing.JFrame {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-        dispose();
+        String genreNew = genreInput.getText();
+       
+       GenreManager.deleteGenre(genreNew);
+       String genres = GenreManager.getGenre();
+       currentGenreOutputDisplay.setText(genres);
+        
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
        // TODO add your handling code here:
-       dispose(); 
+       String genreNew = genreInput.getText();
+       
+       GenreManager.addGenre(genreNew);
+       String genres = GenreManager.getGenre();
+       currentGenreOutputDisplay.setText(genres);
+       
+       
+       
     }//GEN-LAST:event_addButtonActionPerformed
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new homeScreen().setVisible(true);
+    }//GEN-LAST:event_homeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,20 +177,21 @@ public class EditGenres extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditGenres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditGenresUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditGenres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditGenresUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditGenres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditGenresUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditGenres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditGenresUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditGenres().setVisible(true);
+                new EditGenresUI().setVisible(true);
             }
         });
     }
@@ -161,6 +201,7 @@ public class EditGenres extends javax.swing.JFrame {
     private javax.swing.JTextArea currentGenreOutputDisplay;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField genreInput;
+    private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

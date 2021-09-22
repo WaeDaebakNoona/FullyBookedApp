@@ -1,3 +1,4 @@
+
 package UI;
 import backend.UserManager;
 import javax.swing.*;
@@ -6,7 +7,6 @@ import javax.swing.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Narita
@@ -133,6 +133,7 @@ public class logInScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
+        
         if(UserManager.checkUser(username, password)){
             dispose();
             new homeScreen().setVisible(true);
