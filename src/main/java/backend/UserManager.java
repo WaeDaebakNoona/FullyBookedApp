@@ -36,6 +36,7 @@ public class UserManager {
     }
     
     //check users password and username
+    //if correct - access allowed
     public static boolean checkUser(String username, String password){
         try {
             Scanner sc = new Scanner(new File(filepath));

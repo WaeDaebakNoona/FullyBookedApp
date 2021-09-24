@@ -20,6 +20,8 @@ public class AuthorManager {
     
     private static String filepath = "data\\authors.txt";
    
+    //add new author
+    //print writer writes to file
     public static void addAuthor(String name){
         
        try{
@@ -34,6 +36,7 @@ public class AuthorManager {
 
     }
     //ahhhhhhhhhhhhhhhhhhhhh
+    //gets whole line
     public static String getAuthors(){
     
         try {
