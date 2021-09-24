@@ -40,6 +40,7 @@ public class homeScreen extends javax.swing.JFrame {
         editAuthorButton = new javax.swing.JButton();
         editGenreButton = new javax.swing.JButton();
         image = new javax.swing.JLabel();
+        exitButtton = new javax.swing.JButton();
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -47,9 +48,12 @@ public class homeScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fullybookedname.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        fullybookedname.setFont(new java.awt.Font("Cambria Math", 2, 18)); // NOI18N
+        fullybookedname.setForeground(new java.awt.Color(0, 0, 0));
         fullybookedname.setText("FULLY BOOKED");
 
+        homeButton.setBackground(new java.awt.Color(255, 153, 153));
+        homeButton.setForeground(new java.awt.Color(0, 0, 0));
         homeButton.setText("HOME");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +61,8 @@ public class homeScreen extends javax.swing.JFrame {
             }
         });
 
+        newBookButton.setBackground(new java.awt.Color(255, 153, 153));
+        newBookButton.setForeground(new java.awt.Color(0, 0, 0));
         newBookButton.setText("NEW BOOK");
         newBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +70,8 @@ public class homeScreen extends javax.swing.JFrame {
             }
         });
 
+        myBooksButton.setBackground(new java.awt.Color(255, 153, 153));
+        myBooksButton.setForeground(new java.awt.Color(0, 0, 0));
         myBooksButton.setText("MY BOOKS");
         myBooksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,11 +80,15 @@ public class homeScreen extends javax.swing.JFrame {
         });
 
         jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
-        jTextArea1.setText("fully booked application.");
+        jTextArea1.setText("FULLY BOOKED welcomes you!\n\nLog in books and View Books.\nKeeps track of the books that you have read \nand more!\n\n“If you only read the books that everyone else is \nreading, you can only think what everyone else is\nthinking.”\n― Haruki Murakami, Norwegian Wood");
         jScrollPane1.setViewportView(jTextArea1);
 
+        editAuthorButton.setBackground(new java.awt.Color(255, 255, 102));
+        editAuthorButton.setForeground(new java.awt.Color(0, 0, 0));
         editAuthorButton.setText("EDIT AUTHOR");
         editAuthorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +96,8 @@ public class homeScreen extends javax.swing.JFrame {
             }
         });
 
+        editGenreButton.setBackground(new java.awt.Color(255, 255, 102));
+        editGenreButton.setForeground(new java.awt.Color(0, 0, 0));
         editGenreButton.setText("EDIT GENRE");
         editGenreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,35 +107,45 @@ public class homeScreen extends javax.swing.JFrame {
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/books.png"))); // NOI18N
 
+        exitButtton.setBackground(new java.awt.Color(255, 51, 51));
+        exitButtton.setForeground(new java.awt.Color(0, 0, 0));
+        exitButtton.setText("EXIT");
+        exitButtton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(newBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(myBooksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addComponent(editAuthorButton)
-                        .addGap(84, 84, 84)
-                        .addComponent(editGenreButton))
+                        .addGap(71, 71, 71)
+                        .addComponent(editGenreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(exitButtton)
+                                .addGap(135, 135, 135)
                                 .addComponent(fullybookedname, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(image)
-                                .addGap(14, 14, 14))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(40, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(homeButton)
-                .addGap(44, 44, 44)
-                .addComponent(newBookButton)
-                .addGap(46, 46, 46)
-                .addComponent(myBooksButton)
-                .addGap(72, 72, 72))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(image))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,14 +156,16 @@ public class homeScreen extends javax.swing.JFrame {
                         .addComponent(image))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(fullybookedname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(exitButtton)
+                            .addComponent(fullybookedname, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editAuthorButton)
                     .addComponent(editGenreButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(homeButton)
                     .addComponent(newBookButton)
@@ -177,6 +203,11 @@ public class homeScreen extends javax.swing.JFrame {
          dispose();
         new EditGenresUI().setVisible(true);
     }//GEN-LAST:event_editGenreButtonActionPerformed
+
+    private void exitButttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButttonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_exitButttonActionPerformed
 
     
     
@@ -218,6 +249,7 @@ public class homeScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton editAuthorButton;
     private javax.swing.JButton editGenreButton;
+    private javax.swing.JButton exitButtton;
     private javax.swing.JLabel fullybookedname;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel image;

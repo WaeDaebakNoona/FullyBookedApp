@@ -68,6 +68,8 @@ public class newBookScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        homeButton.setBackground(new java.awt.Color(255, 153, 153));
+        homeButton.setForeground(new java.awt.Color(0, 0, 0));
         homeButton.setText("HOME");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +77,8 @@ public class newBookScreen extends javax.swing.JFrame {
             }
         });
 
+        newBookButton.setBackground(new java.awt.Color(255, 153, 153));
+        newBookButton.setForeground(new java.awt.Color(0, 0, 0));
         newBookButton.setText("NEW BOOK");
         newBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +86,8 @@ public class newBookScreen extends javax.swing.JFrame {
             }
         });
 
+        myBookButton.setBackground(new java.awt.Color(255, 153, 153));
+        myBookButton.setForeground(new java.awt.Color(0, 0, 0));
         myBookButton.setText("MY BOOKS");
         myBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,14 +95,24 @@ public class newBookScreen extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("FULLY BOOKED");
 
+        jLabel2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Title");
 
+        jLabel3.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Author");
 
+        jLabel4.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Genre");
 
+        jLabel5.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Rating");
 
         titleInput.addActionListener(new java.awt.event.ActionListener() {
@@ -114,12 +130,18 @@ public class newBookScreen extends javax.swing.JFrame {
 
         comboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        summaryInput.setBackground(new java.awt.Color(204, 204, 255));
         summaryInput.setColumns(20);
+        summaryInput.setForeground(new java.awt.Color(0, 0, 0));
         summaryInput.setRows(5);
         jScrollPane1.setViewportView(summaryInput);
 
+        jLabel6.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Summary / Review");
 
+        addBookButton.setBackground(new java.awt.Color(255, 255, 102));
+        addBookButton.setForeground(new java.awt.Color(0, 0, 0));
         addBookButton.setText("ADD BOOk");
         addBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +149,8 @@ public class newBookScreen extends javax.swing.JFrame {
             }
         });
 
+        cancelButton.setBackground(new java.awt.Color(255, 255, 102));
+        cancelButton.setForeground(new java.awt.Color(0, 0, 0));
         cancelButton.setText("CANCEL");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,18 +168,16 @@ public class newBookScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(homeButton)
-                                .addGap(53, 53, 53)
-                                .addComponent(newBookButton)
-                                .addGap(54, 54, 54)
-                                .addComponent(myBookButton))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(73, 73, 73))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(newBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(myBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
