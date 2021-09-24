@@ -1,4 +1,3 @@
-romance
 historical
 action
 fiction
@@ -7,3 +6,4 @@ horror
 novel
 mystery
 fantasy
+romance
